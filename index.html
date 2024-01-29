@@ -9,17 +9,19 @@
 <body>
     <form name="formulario" action="ejecutar-codigo.php" method="post" 
     id="miFormulario">
+<!--Escribe el nombre de usuario con miniscula y x números-->
     <div>
         <label for="mitexto">Usuario</label>
         <input type="text" id="mitexto" placeholder="Escribe tu usuario"
         title="Escribe en minúscula y no más de 15 caracteres" 
         pattern="[a-z]{1,15}">
     </div>
+<!--Escribe con dos caracteres de mínimo y 30 de máximo-->
     <div>
         <label for="telefono">Teléfono</label>
-        <input type="number" id="telefono" placeholder="Escribe tu número de 
-        teléfono" min="2" max="30" pattern="[a-z]{1,15}">
+        <input type="number" id="telefono" placeholder="Escribe tu número de teléfono" min="2" max="30" pattern="[a-z]{1,15}">
     </div>
+<!--Escribir usuario y contraseña con mínimos y de forma obligatoria-->
     <div class="login">
         <h3>Login</h3>
         <input type="text"placeholder="Escribe tu nombre" name="nombre"minlength="5" 
@@ -27,16 +29,98 @@
         <input type="password" name="pass" placeholder="Contraseña" 
         minlength="11" required>
     </div>
+<!--Cuadro de texto en el que solo se pueden insertar estos modelos-->
     <div>
         <input type="text" placeholder="Indica su modelo de coche" title="Modelos 
         posibles: A1, A3, A4 y A5" pattern="A|a(1|3|4|5)">
     </div>
+<!--cuadrado para ecribir tu email con required que así es obligatorio escribirlo-->
     <div>
         <label for="correo">Email</label>
         <input type="email" id="correo" placeholder="Escribe tu email" required>
     </div>
+<!--Input con circulo en el que puedes seleccionar solo uno -->
+    <div>
+        <fieldset>
+            <legend>Indica tu grupo de edad</legend>
+            <label for="primero">Menor de 18</label>
+            <input type="radio" id="primero" name="edades"><br>
+            <label for="segundo">18-65</label>
+            <input type="radio" id="segundo" name="edades" checked><br>
+            <label for="tercero">Mayor de 65</label>
+            <input type="radio" id="tercero" name="edades"><br>
+        </fieldset>
+    </div>
+<!--Input con cuadradito en el que puedes seleccionar varios -->
+    <div>
+        <fieldset>
+            <legend>Selecciona los ingredientes</legend>
+            <label for="primero-ck">Lechuga</label>
+            <input type="checkbox" id="primero-ck" name="edades-ck" checked><br>
+            <label for="segundo-ck">Tomate</label>
+            <input type="checkbox" id="segundo-ck" name="edades-ck"><br>
+            <label for="tercero-ck">Cebolla</label>
+            <input type="checkbox" id="tercero-ck" name="edades-ck"><br>
+        </fieldset>
+    </div>
+<!--Textarea con sus letras de fondo los caracteres máximos y el tamaño-->    
+    <div>
+        <label for="miarea">Observaciones</label>
+        <textarea name="mensaje" id="miarea" placeholder="máximo 200 caracteres" maxlength="200" cols="30" rows="10" ></textarea>
+    </div>
+<!--Input de opciones con desplegable y varias opciones-->
+    <div>
+        <fieldset>
+            <legend>Opciones</legend>
+            <label for="misopciones">Seleccionar</label>
+            <select multiple name="opciones" id="misopciones">
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+            </select>
+        </fieldset>
+    </div>
+<!--Input de opciones con desplegable y solo una opción-->
+    <div>
+        <fieldset>
+            <legend>Opciones</legend>
+            <label for="misopciones">Seleccionar</label>
+            <select name="opciones" id="misopciones">
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+            </select>
+        </fieldset>
+    </div>
+
+    <div>
+        <fieldset>
+            <legend>Opciones de números y letras</legend>
+            <label for="opcionesDos"></label>
+            <select name="numerosyletras" id="opcionesDos">
+                <optgroup label="Números">
+                    <option value="opcion1">1</option>
+                    <option value="opcion2">2</option>
+                    <option value="opcion3">3</option>
+                    <option value="opcion4">4</option>
+                </optgroup>
+                <optgroup label="Letras">
+                    <option value="opcionA">A</option>
+                    <option value="opcionB">B</option>
+                    <option value="opcionC">C</option>
+                    <option value="opcionD">D</option>
+                </optgroup>
+            </select>
+        </fieldset>
+    </div>
+    
+    <div>
+        <label for="foto">Subir archivos</label>
+        <input type="file" name="subirFoto" id="foto">
+        <input type="submit" value="Información legal" formaction="https://oalhuetortajar.com/politica-de-privacidad/" formtarget="_blank">
+
+    </div>
     <input type="submit" value="Enviar">
     </form>
-    
 </body>
 </html>
